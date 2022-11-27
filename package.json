@@ -1,0 +1,27 @@
+{
+  "name": "opensearch-module",
+  "version": "1.0.0",
+  "description": "Module that can be used to index data and then search for data in OpenSearch",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist/ && tsc",
+    "test": "jest",
+    "test:dev": "jest -c jest.config.dev.js",
+    "test:coverage": "jest  -c jest.config.js --coverage",
+    "check-format": "prettier --check .",
+    "fix-format": "prettier --write .",
+    "lint": "eslint . --ext .ts",
+    "fix-lint": "eslint . --ext .ts --fix",
+    "fix": "npm run fix-format && npm run fix-lint"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "prettier": "^2.8.0",
+    "ts-jest": "^29.0.3"
+  }
+}
