@@ -43,8 +43,8 @@ describe("OpenSearch exploratory test", () => {
     });
     expect(result).toBe(true);
   });
-  it("should search for a document", async () => {
-    const results = await client.search("my document", "user-1");
+  it.only("should search for a document", async () => {
+    const results = await client.search("anton", "user1");
     // eslint-disable-next-line no-console
     console.log(
       `found results: ${results.hits.length}`,
