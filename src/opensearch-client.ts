@@ -45,15 +45,6 @@ export class OpenSearchClient {
           bool: {
             must: [
               {
-                match: {
-                  owner: {
-                    query: `"${documentOwner}"`,
-                    fuzziness: 0,
-                    fuzzy_transpositions: false,
-                  },
-                },
-              },
-              {
                 multi_match: {
                   query: searchQuery,
                   fuzziness,

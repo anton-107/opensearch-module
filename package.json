@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/aws4": "^1.11.2",
     "@types/jest": "^29.2.3",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "eslint": "^8.28.0",
@@ -28,6 +29,7 @@
   "dependencies": {
     "@aws-sdk/credential-provider-node": "^3.216.0",
     "@opensearch-project/opensearch": "^2.1.0",
-    "aws-sdk": "^2.1261.0"
+    "aws-sdk": "^2.1261.0",
+    "aws4": "^1.11.0"
   }
 }

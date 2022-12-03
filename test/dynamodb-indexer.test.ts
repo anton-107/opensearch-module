@@ -1,6 +1,6 @@
-import { AWSError,DynamoDB } from "aws-sdk";
+import { AWSError, DynamoDB } from "aws-sdk";
 import { Request } from "aws-sdk/lib/request";
-import { anything, instance, mock, verify,when } from "ts-mockito";
+import { anything, instance, mock, verify, when } from "ts-mockito";
 
 import { DynamoDBIndexer } from "../src/dynamodb-indexer";
 import { OpenSearchClient } from "../src/opensearch-client";

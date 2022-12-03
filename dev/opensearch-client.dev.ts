@@ -1,8 +1,7 @@
-import { defaultProvider } from "@aws-sdk/credential-provider-node";
 import { Client } from "@opensearch-project/opensearch";
-import { AwsSigv4Signer } from "@opensearch-project/opensearch/aws";
 
 import { OpenSearchClient } from "./../src/opensearch-client";
+import { OpenSearchServerlessConnection } from "./../src/opensearch-serverless-connection";
 
 describe("OpenSearch exploratory test", () => {
   let client: OpenSearchClient;
@@ -21,12 +20,8 @@ describe("OpenSearch exploratory test", () => {
     }
 
     const openSearchClient = new Client({
-      ...AwsSigv4Signer({
-        region: awsRegion,
-        // Example with AWS SDK V2:
-        getCredentials: defaultProvider(),
-      }),
-      node: `https://${searchDomainEndpoint}`,
+      node: `https://${searchDomainEndpoint}/`,
+      Connection: OpenSearchServerlessConnection,
     });
 
     client = new OpenSearchClient({
@@ -44,7 +39,7 @@ describe("OpenSearch exploratory test", () => {
     expect(result).toBe(true);
   });
   it.only("should search for a document", async () => {
-    const results = await client.search("anton", "user1");
+    const results = await client.search("stream", "user1");
     // eslint-disable-next-line no-console
     console.log(
       `found results: ${results.hits.length}`,
